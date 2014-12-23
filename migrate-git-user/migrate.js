@@ -1,4 +1,6 @@
 var GitHubApi = require("github");
+var user = process.env.GITHUB_USER;
+var pass = process.env.GITHUB_PASS
 
 var github = new GitHubApi({
   // required
@@ -6,8 +8,17 @@ var github = new GitHubApi({
   // optional
   timeout: 5000
 });
-github.user.getFollowingFromUser({
-  user: "mikedeboer"
-}, function(err, res) {
-  console.log(JSON.stringify(res));
+
+
+
+github.authenticate({
+  type: "basic",
+  username: user,
+  password: pass,
+});
+github.user.update({
+  location: "Space"
+}, function(err) {
+  console.log(err)
+  console.log("done!");
 });
