@@ -9,6 +9,7 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
-    "node-github": "0.0.3"
+    "node-github": "0.0.3",
+    "octonode": "^0.6.12"
   }
 }
