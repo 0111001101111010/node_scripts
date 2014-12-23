@@ -1,0 +1,14 @@
+{
+  "name": "migrate-git-user",
+  "version": "0.0.1",
+  "description": "",
+  "main": "migrate.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "node-github": "0.0.3"
+  }
+}
