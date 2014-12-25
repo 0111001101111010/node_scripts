@@ -2,6 +2,7 @@ var github = require("octonode");
 var user = process.env.GITHUB_USER;
 var pass = process.env.GITHUB_PASS
 var fs = require('fs');
+var _ = require('lodash');
 
 var client = github.client({
   username: user,
@@ -17,6 +18,13 @@ var client = github.client();
 client.get('/users/stanzheng/repos', {}, function(err, status, body, headers) {
   //console.log(body); //json object
   //output(JSON.stringify(body));
+  //var repos = JSON.parse(body);
+  var repos = body;
+
+  console.log(repos);
+  _.each(repos, function(value, key) {
+    console.log(key);
+  });
 });
 
 
