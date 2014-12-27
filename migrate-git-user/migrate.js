@@ -21,9 +21,10 @@ client.get('/users/stanzheng/repos', {}, function(err, status, body, headers) {
   //var repos = JSON.parse(body);
   var repos = body;
 
+  //fork each repo as they come in
   console.log(repos);
   _.each(repos, function(value, key) {
-    console.log(key);
+    console.log(key, value);
   });
 });
 
