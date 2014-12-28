@@ -15,7 +15,7 @@ var ghme = client.me();
 
 var client = github.client();
 
-client.get('/users/stanzheng/repos', {}, function(err, status, body, headers) {
+client.get('/users/stanzheng/repos', {per_page: 100}, function(err, status, body, headers) {
   //console.log(body); //json object
   //output(JSON.stringify(body));
   //var repos = JSON.parse(body);
@@ -24,7 +24,7 @@ client.get('/users/stanzheng/repos', {}, function(err, status, body, headers) {
   //fork each repo as they come in
   console.log(repos);
   _.each(repos, function(value, key) {
-    console.log(key, value);
+    console.log(key, value.full_name);
   });
 });
 
